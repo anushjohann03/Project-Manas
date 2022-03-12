@@ -3,7 +3,7 @@
 
 using namespace std;
 
-char board[3][3] = {{'1','2','3'},{'4','5','6'},{'7','8','9'}};
+char board[3][3] = {{'1','2','3'},{'4','5','6'},{'7','8','9'}}; 
 
   int row;
   int column;
@@ -15,7 +15,7 @@ char board[3][3] = {{'1','2','3'},{'4','5','6'},{'7','8','9'}};
    
 void function_1()
 {
-       
+   //this function is for the display of the structure of the board to play the game     
 
        cout<<"   |     |  \n";
        cout<<" "<<board[0][0]<<" |  "<<board[0][1]<<"  |  "<<board[0][2]<<"  \n";
@@ -31,6 +31,7 @@ void function_1()
 
 void function_2()
 {
+  // this function is used to identify the space where the player wants to put the value and play his turn
       int digit;
       
       if(sub == 'x')
@@ -104,13 +105,13 @@ void function_2()
              cout<<"invalid input"<<endl;
       }
 
-      if(sub == 'x' && board[row][column] != 'x' && board[row][column] != '0')
+      if(sub == 'x' && board[row][column] != 'x' && board[row][column] != '0')  //this is to check if there is any empty spaces left in the structure if there is any it updates for player 1
        {
          board[row][column] = 'x';
          sub ='0';
        }
 
-       else if(sub == '0' && board[row][column] != 'x' && board[row][column] != '0') 
+       else if(sub == '0' && board[row][column] != 'x' && board[row][column] != '0')   //this is to check if there is any empty spaces left in the structure if there is any it updates for player 2
        {
           board[row][column] = '0';
           sub ='x';
@@ -123,7 +124,7 @@ void function_2()
 }
    
         bool function_3()
-       {
+       {     // this function check if there is any winning line in the structure that is vertical or horizontal
               for(int i = 0; i < 3; i++)
               {
                      if(board[i][0] == board[i][1] && board[1][0] == board[i][2] || board[0][i] == board[1][i] && board[0][i] == board[2][i])
@@ -134,7 +135,7 @@ void function_2()
               {
                      return true;
               }
-
+      //this is to check if the spaces are fully completed or game is finished
          for(int i = 0; i <3; i++)
          {
                 for(int j = 0; j<3; j++)
@@ -145,15 +146,15 @@ void function_2()
                        }
                 }
          }
-           tie = true;
+           tie = true;  //this is a tie situation
            return false;
 
        }
       
 int main()
 {
-
-       
+//input and output function to display and enter the value
+       cout<<"ttt T I C --T A C --T O Ettt";
        cout<<"Enter thr name of first player: \n";
        getline(cin, n1);
 
@@ -170,7 +171,7 @@ int main()
             function_2();
             function_3();
       }
-      
+      // condition to check who wins the game
       if(sub == 'x' && tie == false)
       {
              cout<<n1<<"WINS THE GAME"<<endl;
