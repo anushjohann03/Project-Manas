@@ -2,7 +2,7 @@
 #include<stdlib.h>
 
 using namespace std;
-
+//declaring the array
 char board[3][3] = {{'1','2','3'},{'4','5','6'},{'7','8','9'}}; 
 
   int row;
@@ -18,7 +18,7 @@ void function_1()
    //this function is for the display of the structure of the board to play the game     
 
        cout<<"   |     |  \n";
-       cout<<" "<<board[0][0]<<" |  "<<board[0][1]<<"  |  "<<board[0][2]<<"  \n";
+       cout<<" "<<board[0][0]<<" |  "<<board[0][1]<<"  |  "<<board[0][2]<<"  \n";      
        cout<<"___|_____|___  \n";        
        cout<<"   |     |  \n";       
        cout<<" "<<board[1][0]<<" |  "<<board[1][1]<<"  |  "<<board[1][2]<<"  \n"; 
@@ -31,7 +31,7 @@ void function_1()
 
 void function_2()
 {
-  // this function is used to identify the space where the player wants to put the value and play his turn
+  // this function is used to identify the space where the player wants to put the value and play his turn and the if statements are used to find that space in the structure
       int digit;
       
       if(sub == 'x')
@@ -100,7 +100,7 @@ void function_2()
              column = 2;
       } 
 
-      else if (digit <1 || digit > 9)
+      else if (digit <1 || digit > 9)   // if any other box is entered other than between 1-9 , then it is a invalid input
       {
              cout<<"invalid input"<<endl;
       }
@@ -117,7 +117,7 @@ void function_2()
           sub ='x';
        }
        else{
-              cout<<"there is no empty space"<<endl;
+              cout<<"there is no empty space"<<endl; 
               function_2();
        }
        function_1();
